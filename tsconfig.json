@@ -1,0 +1,11 @@
+{
+  "files": [],
+  "references": [],
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es2022",
+    "types": [ "node" ],
+    "moduleResolution": "node",
+    "lib": [ "es2022", "dom" ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "xfccg-discord-bot",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "XFCCG Discord Bot",
+  "main": "index.js",
+  "scripts": {
+    "deploy:commands": "npx --yes tsx commands.ts"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "keywords": [],
+  "author": "Joost Berns",
+  "license": "ISC",
+  "packageManager": "pnpm@10.15.1",
+  "dependencies": {
+    "discord.js": "~14.25.1",
+    "dotenv": "~17.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "~25.3.0"
+  }
+}
