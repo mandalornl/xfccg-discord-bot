@@ -4,17 +4,20 @@
   "type": "module",
   "version": "1.0.0",
   "description": "XFCCG Discord Bot",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "deploy:commands": "npx --yes tsx commands.ts"
+    "dev": "pnpm dlx tsx --watch app.ts",
+    "deploy:commands": "pnpm dlx tsx commands.ts"
   },
   "engines": {
-    "node": "22"
+    "node": "24"
+  },
+  "imports": {
+    "#src/*": "./src/*.js"
   },
   "keywords": [],
-  "author": "Joost Berns",
   "license": "ISC",
-  "packageManager": "pnpm@10.15.1",
+  "packageManager": "pnpm@10.30.3",
   "dependencies": {
     "discord.js": "~14.25.1",
     "dotenv": "~17.3.1"

@@ -2,10 +2,15 @@
   "files": [],
   "references": [],
   "compilerOptions": {
-    "module": "esnext",
-    "target": "es2022",
+    "module": "NodeNext",
+    "target": "ESNext",
     "types": [ "node" ],
-    "moduleResolution": "node",
-    "lib": [ "es2022", "dom" ]
+    "moduleResolution": "NodeNext",
+    "lib": [ "ESNext" ],
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "#src/*": [ "src/*" ]
+    }
   }
 }

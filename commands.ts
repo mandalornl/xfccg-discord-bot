@@ -8,7 +8,7 @@ import {
   InteractionContextType,
 } from 'discord.js';
 
-import { api } from './api';
+import { api } from '#src/util/api';
 
 const rest = new REST({
   version: '10',
@@ -28,32 +28,47 @@ const getApplicationCommandOptionChoiceData = (values: string[]): ApplicationCom
 await rest.put(Routes.applicationCommands(process.env.APP_ID), {
   body: [
     {
-      name: 'cards',
-      description: 'Embed a XFCCG card',
+      name: 'card',
+      description: 'Embed a XFCCG card by Set, Type and Title',
       type: ApplicationCommandOptionType.Subcommand,
       integration_types: [ ApplicationIntegrationType.GuildInstall ],
       contexts: [ InteractionContextType.Guild ],
       options: [
         {
           name: 'set',
-          description: 'The card set',
+          description: 'Select the card Set',
           type: ApplicationCommandOptionType.String,
           required: true,
           choices: getApplicationCommandOptionChoiceData(sets),
         },
         {
           name: 'type',
-          description: 'The card type',
+          description: 'Select the card Type',
           type: ApplicationCommandOptionType.String,
           required: true,
           choices: getApplicationCommandOptionChoiceData(types),
         },
         {
-          name: 'search',
-          description: 'The search query',
+          name: 'title',
+          description: 'Query cards by their Title, only max 25 results are shown for each query',
           type: ApplicationCommandOptionType.String,
           required: true,
           autocomplete: true,
+        },
+      ],
+    },
+    {
+      name: 'card-bfn',
+      description: 'Embed a XFCCG card by Bureau File Number',
+      type: ApplicationCommandOptionType.Subcommand,
+      integration_types: [ ApplicationIntegrationType.GuildInstall ],
+      contexts: [ InteractionContextType.Guild ],
+      options: [
+        {
+          name: 'bfn',
+          description: 'The card Bureau File Number',
+          type: ApplicationCommandOptionType.String,
+          required: true,
         },
       ],
     },
