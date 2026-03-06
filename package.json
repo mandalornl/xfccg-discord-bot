@@ -10,7 +10,7 @@
     "deploy:commands": "pnpm dlx tsx commands.ts"
   },
   "engines": {
-    "node": "24"
+    "node": "22||24"
   },
   "imports": {
     "#src/*": "./src/*.js"
